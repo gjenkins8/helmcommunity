@@ -86,6 +86,7 @@ As such, while option 1. is probably the cleanest from an implementation and use
 - If the user attempts to use SSA with a cluster which does not support it (unlikely: SSA [went GA](https://kubernetes.io/blog/2021/08/06/server-side-apply-ga/) in Kubernetes v1.22), Helm should error.
 - Client-side API object validation isn't applicable when SSA enabled (`helm install|upgrade --disable-openapi-validation`)
 - Hooks could be deployed with SSA. But as hook objects are not updated (create/delete only), they are not really affected
+- Stored release manifests should not change (they store the object as Helm intends)
 
 ### Implementation
 
